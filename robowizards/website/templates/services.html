@@ -1,0 +1,21 @@
+{% extends "base.html" %} 
+{% block title %} Hizmetlerimiz {% endblock %}
+{% block content %}
+<div class="container">
+    <h2>Our Services</h2>
+    <p>Bu sayfada şirket olarak sağladığımız çözümleri göstereceğiz.</p>
+    <div class="row">
+        {% for service in services %}
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <img src="{{ service.Image.url }}" class="card-img-top" alt="{{ service.Title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ service.Title }}</h5>
+                    <p class="card-text">{{ service.Description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
